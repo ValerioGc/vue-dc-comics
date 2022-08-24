@@ -1,26 +1,30 @@
 <template>
   <div id="app">
-    <AppHeader />
-    <AppMain />
-    <AppFooter />
+    <appHeader />
+    <appMain />
+    <appFooter />
   </div>
 </template>
 
 <script>
-  import AppHeader from './components/appHeader.vue';
-  import AppFooter from './components/appFooter.vue';
-  import AppMain from './components/appMain.vue';
-
+  import appHeader from './components/appHeader.vue';
+  import appMain from './components/appMain.vue';
+  import appFooter from './components/appFooter.vue';
+  
   export default {
     name: 'App',
     components: {
-      AppHeader,
-      AppFooter,
-      AppMain
+      appHeader,
+      appMain,
+      appFooter
     }
   }
 </script>
 
 <style lang="scss">
+
+  @import './styles/vars.scss';
+  @import './styles/general.scss';
+  @import './styles/mixins/flex-center.scss';
 
 </style>

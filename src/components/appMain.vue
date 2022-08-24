@@ -1,20 +1,19 @@
 <template>
     <main class="appMain">
-        <div>
+        <div class="container-content">
             <h1>--> Content goes here &lt;--</h1>
         </div>
-        <div>
+        <div class="container-comics">
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
-                    <img :src="link.imgPath" :alt="`Link ${link.name}`">
+                    <!-- <img :src="require('@/assets/img/' + link.imgName + '.png')" :alt=" `Link ${link.name}`"> -->
+                    <img :src="'./assets/img/' + link.imgName + '.png'" :alt=" `Link ${link.name}`">
                     <h2>{{link.name}}</h2>
                 </li>
             </ul>
         </div>
     </main>
 </template>
-
-
 
 <script>
     export default {
@@ -25,34 +24,53 @@
                     {
                         name: 'Digital Comics',
                         path: '#',
-                        imgPath: './src/assets/img/buy-comics-digital-comics.png',
+                        imgName: 'buy-comics-digital-comics',
                     },
                     {
                         name: 'DC Merchandise',
                         path: '#',
-                        imgPath: '@/assets/img/buy-comics-merchandise.png'
+                        imgName: 'buy-comics-merchandise'
                     },
                     {
                         name: 'Subscription',
                         path: '#',
-                        imgPath: '@/assets/img/buy-comics-subscription.png'
+                        imgName: 'buy-comics-subscription'
                     },
                     {
                         name: 'Comic shop locator',
                         path: '#',
-                        imgPath: '@/assets/img/buy-comics-shop-locator.png'
+                        imgName: 'buy-comics-shop-locator'
                     },
                     {
                         name: 'DC Power visa',
                         path: '#',
-                        imgPath: '@/assets/img/buy-dc-power-visa.png'
-                    }
+                        imgName: 'buy-dc-power-visa'
+                    },
                 ]
             }
         }
     }
 </script>
 
+<style lang="scss">
 
-<style  lang="scss">
+
+
+    @import '../styles/vars.scss';
+    @import '../styles/general.scss';
+
+    @import '../styles/mixins/flex-center.scss';
+
+    main {
+        background-color:  $brand_color;
+    
+        .container-content {
+            background-color: $dark_color;
+        }
+        .container-comics {
+            @include flex-center('vertical');
+            width: 80%;
+        }
+    }
+
 </style>
