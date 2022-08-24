@@ -38,7 +38,6 @@
 
 <script>
 
-
 export default {
     name: 'appFooter',
     data() {
@@ -172,15 +171,14 @@ export default {
         }
     }
 }
-</script>
 
+</script>
 
 <style lang="scss">
 
-
-@import '../styles/vars.scss';
-@import '../styles/general.scss';
-@import '../styles/mixins.scss';
+    @import '../styles/vars.scss';
+    @import '../styles/general.scss';
+    @import '../styles/mixins.scss';
 
     footer {
         background-color: $alt_dark_color;
@@ -188,7 +186,6 @@ export default {
         .footer-top {
             @include flex-center('vertical');
             @include justify('space_around');
-
             background-image: url('@/assets/img/footer-bg.jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -197,15 +194,18 @@ export default {
                 color: $light_color;
                 text-transform: uppercase;
             }
+
             a {
                 color: $alt_light_color;
                 display: block;
                 padding: 2px 0;
             }
+
             h3 {
                 color: $light_color;
                 padding: 10px 0;
             }
+
             img {
                 width: 15%
             }
@@ -214,7 +214,6 @@ export default {
         .footer-low {
             @include flex-center('vertical');
             @include justify('space_between');
-
             padding: 30px 0;
             margin:auto;
             width: 80%;
@@ -231,14 +230,17 @@ export default {
                     transition: all 0.5s linear 0.1s;
                 }
             }
+
             h2 {
                 text-transform: uppercase;
                 color: $brand_color;
             }
+
             i {
                 border-radius: 50%;
                 background-color: $alt_light_color;
             }
         }
     }
+    
 </style>

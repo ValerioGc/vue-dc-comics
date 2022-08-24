@@ -9,7 +9,7 @@
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
                     <!-- <img :src="require('@/assets/img/' + link.imgName + '.png')" :alt=" `Link ${link.name}`"> -->
-                    <img :src="'./assets/img/' + link.imgName + '.png'" :alt=" `Link ${link.name}`">
+                    <img :src="'../assets/img/' + link.imgName + '.png'" :alt=" `Link ${link.name}`">
                     <h3>{{link.name}}</h3>
                 </li>
             </ul>
@@ -56,15 +56,6 @@
 
 <style lang="scss">
 
-
-
-
-
-
-
-
-
-
     @import '../styles/vars.scss';
     @import '../styles/general.scss';
     @import '../styles/mixins.scss';
@@ -74,17 +65,18 @@
         .container-content {
             background-color: $dark_color;
             padding: 70px 0;
-            
+
             .content {
                 color: $light_color;
                 width: 80%;
                 margin: auto;
             }
         }
+
         .container-comics {
+
             @include flex-center('vertical');
             @include justify('space_between');
-            
             background-color: $brand_color;
             
             ul {
@@ -93,12 +85,14 @@
                 width: 80%;
                 margin: auto;
             }
+            
             img {
                 width: 10%;
                 display: inline-block;
                 vertical-align: middle;
                 line-height: 100%;
             }
+
             h3 {
                 color: $light_color;
                 padding: 7px 0;
