@@ -1,14 +1,16 @@
 <template>
     <main class="appMain">
         <div class="container-content">
-            <h1>--> Content goes here &lt;--</h1>
+            <div class="content">
+                <h1>--> Content goes here &lt;--</h1>
+            </div>
         </div>
         <div class="container-comics">
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
                     <!-- <img :src="require('@/assets/img/' + link.imgName + '.png')" :alt=" `Link ${link.name}`"> -->
                     <img :src="'./assets/img/' + link.imgName + '.png'" :alt=" `Link ${link.name}`">
-                    <h2>{{link.name}}</h2>
+                    <h3>{{link.name}}</h3>
                 </li>
             </ul>
         </div>
@@ -56,20 +58,52 @@
 
 
 
+
+
+
+
+
+
+
     @import '../styles/vars.scss';
     @import '../styles/general.scss';
-
-    @import '../styles/mixins/flex-center.scss';
+    @import '../styles/mixins.scss';
 
     main {
-        background-color:  $brand_color;
     
         .container-content {
             background-color: $dark_color;
+            padding: 70px 0;
+            
+            .content {
+                color: $light_color;
+                width: 80%;
+                margin: auto;
+            }
         }
         .container-comics {
             @include flex-center('vertical');
-            width: 80%;
+            @include justify('space_between');
+            
+            background-color: $brand_color;
+            
+            ul {
+                @include flex-center('space_between');
+                @include justify('space_between');
+                width: 80%;
+                margin: auto;
+            }
+            img {
+                width: 10%;
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 100%;
+            }
+            h3 {
+                color: $light_color;
+                padding: 7px 0;
+                display: inline-block;
+            }
         }
     }
 

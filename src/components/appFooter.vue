@@ -178,11 +178,9 @@ export default {
 <style lang="scss">
 
 
-
 @import '../styles/vars.scss';
 @import '../styles/general.scss';
-
-@import '../styles/mixins/flex-center.scss';
+@import '../styles/mixins.scss';
 
     footer {
         background-color: $alt_dark_color;
@@ -190,7 +188,7 @@ export default {
         .footer-top {
             @include flex-center('vertical');
             @include justify('space_around');
-            
+
             background-image: url('@/assets/img/footer-bg.jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -214,15 +212,24 @@ export default {
         }
 
         .footer-low {
-
             @include flex-center('vertical');
-            @include justify('space_around');
+            @include justify('space_between');
+
+            padding: 30px 0;
+            margin:auto;
+            width: 80%;
 
             a.button {
                 padding: 10px 15px;
-                border: 2px solid $brand_color;
+                border: 3px solid $brand_color;
                 color: $light_color;
                 text-transform: uppercase;
+
+                &:hover {
+                    color: $brand_color;
+                    border-color: $light_color;
+                    transition: all 0.5s linear 0.1s;
+                }
             }
             h2 {
                 text-transform: uppercase;

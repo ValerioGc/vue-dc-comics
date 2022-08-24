@@ -21,10 +21,4 @@
   }
 </script>
 
-<style lang="scss">
-
-  @import './styles/vars.scss';
-  @import './styles/general.scss';
-  @import './styles/mixins/flex-center.scss';
-
-</style>
+<style lang="scss"></style>

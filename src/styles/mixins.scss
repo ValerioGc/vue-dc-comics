@@ -1,7 +1,5 @@
 @mixin flex-center($type:'center') {
-
     display: flex;
-
     @if $type == 'vertical' {
         align-items: center;
     } @else if $type == 'horizontal' {

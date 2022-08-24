@@ -1,6 +1,6 @@
 <template>
     <header class="appHeader">
-        <img src="@/assets/img/dc-logo.png" alt="Logo DC Comics">
+        <img class="logo" src="@/assets/img/dc-logo.png" alt="Logo DC Comics">
         <ul>
             <li v-for="(items, index) in navItems" :key="index">
                 <a href="#" :class="{'active' : items.isActive}" class="nav">{{items.name}}</a>
@@ -76,33 +76,44 @@
 
 
 
-@import '../styles/vars.scss';
-@import '../styles/general.scss';
 
-@import '../styles/mixins/flex-center.scss';
+
+    @import '../styles/vars.scss';
+    @import '../styles/general.scss';
+    @import '../styles/mixins.scss';
     
         header {
             @include flex-center('vertical');
+            @include justify('space_between');
             width: 80%;
             margin: auto;
             background-color: $light_color;
     
             a {
                 color: $alt_dark_color;
+                border-bottom: 3px solid transparent;
+                padding: 3.3rem 0;
+
+                &:hover {
+                    color: $brand_color;
+                    border-bottom: 3px solid $brand_color;
+                }
             }
     
             ul {
                 @include flex-center('vertical');
                 @include justify('space_between');
-                width: 80%;
+                width: 60%;
             }
     
             .active {
-                border-bottom: 2px solid $brand_color;
+                border-color:$brand_color;
                 color: $brand_color;
             }
+
             .logo {
-                width: 50%;
+                width: 6%;
+                margin: 25px 0;
             }
         }
 
