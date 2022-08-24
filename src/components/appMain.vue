@@ -6,13 +6,15 @@
         <div>
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
-                    <img :src="`../assets/img/${link.imgPath}`" :alt="`Link ${link.name}`">
+                    <img :src="link.imgPath" :alt="`Link ${link.name}`">
                     <h2>{{link.name}}</h2>
                 </li>
             </ul>
         </div>
     </main>
 </template>
+
+
 
 <script>
     export default {
@@ -23,7 +25,7 @@
                     {
                         name: 'Digital Comics',
                         path: '#',
-                        imgPath: 'buy-comics-digital-comics.png'
+                        imgPath: './src/assets/img/buy-comics-digital-comics.png',
                     },
                     {
                         name: 'DC Merchandise',

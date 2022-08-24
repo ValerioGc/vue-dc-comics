@@ -1,7 +1,16 @@
 <template>
     <footer class="appFooter">
         <div>
-
+            <ul>
+                <li>
+                    <h3>{{footLink.title}}</h3>
+                </li>
+                <li v-for="(links, index) in footLink" :key="index">
+                    <a href="#">
+                        {{links.name}}
+                    </a>
+                </li>
+            </ul>
         </div>
         <div>
             <a href="#">SIGN-UP NOW!</a>
