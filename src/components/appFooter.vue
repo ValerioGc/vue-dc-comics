@@ -1,20 +1,30 @@
 <template>
-    <div class="appFooter">
+    <footer class="appFooter">
         <div>
-            
+
         </div>
         <div>
             <a href="#">SIGN-UP NOW!</a>
             <div>
                 <h2>FOLLOW US</h2>
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script>

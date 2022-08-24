@@ -1,5 +1,5 @@
 <template>
-    <div class="appMain">
+    <main class="appMain">
         <div>
             <h1>--> Content goes here &lt;--</h1>
         </div>
@@ -11,7 +11,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>

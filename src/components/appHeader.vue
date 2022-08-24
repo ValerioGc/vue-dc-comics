@@ -1,12 +1,12 @@
 <template>
-    <div class="appHeader">
+    <header class="appHeader">
         <img src="@/assets/img/dc-logo.png" alt="Logo DC Comics">
         <ul>
             <li v-for="(items, index) in navItems" :key="index">
-                <a href="#" :class="{'active' : isActive}">{{items.name}}</a>
+                <a href="#" :class="{'active' : items.isActive}">{{items.name}}</a>
             </li>
         </ul>
-    </div>
+    </header>
 </template>
 
 <script>
