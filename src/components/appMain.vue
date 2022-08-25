@@ -86,15 +86,13 @@
                 @include justify('space_between');
                 width: 80%;
                 margin: auto;
-            }
-            
+            }  
             img {
-                width: 10%;
+                width: 15%;
                 display: inline-block;
                 vertical-align: middle;
                 line-height: 100%;
             }
-
             h3 {
                 color: $light_color;
                 padding: 7px 0;
