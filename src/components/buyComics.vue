@@ -1,52 +1,55 @@
 <template>
     <div class="container-comics brand-style">
         <ul>
-            <li v-for="(link, index) in comicsLink" :key="index">
-                <img :src="link.imgName" :alt="`Link ${link.name}`" />
-                <a href="#">
-                    <h3>{{ link.name }}</h3>
-                </a>
-            </li>
+            <buyComicsLink v-for="(link, index) in comicsLink" 
+            :linkName="link.name" 
+            :linkThumb="link.imgName"
+            :linkPath="link.link" :key="index" />
         </ul>
     </div>
 </template>
 
 <script>
 
+import buyComicsLink from './buyComicsLink.vue';
+
     export default {
-        name: 'buyComics',
-        data() {
-            return {
-                comicsLink: [
-                    {
-                        name: 'Digital Comics',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-digital-comics.png'),
-                    },
-                    {
-                        name: 'DC Merchandise',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-merchandise.png'),
-                    },
-                    {
-                        name: 'Subscription',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-subscriptions.png'),
-                    },
-                    {
-                        name: 'Comic shop locator',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-shop-locator.png'),
-                    },
-                    {
-                        name: 'DC Power visa',
-                        path: '#',
-                        imgName: require('../assets/img/buy-dc-power-visa.svg'),
-                    },
-                ],
-            }
-        }
+    name: "buyComics",
+    components : {
+        buyComicsLink,
+    },
+    data() {
+        return {
+            comicsLink: [
+                {
+                    name: "Digital Comics",
+                    link: "#",
+                    imgName: require("../assets/img/buy-comics-digital-comics.png"),
+                },
+                {
+                    name: "DC Merchandise",
+                    link: "#",
+                    imgName: require("../assets/img/buy-comics-merchandise.png"),
+                },
+                {
+                    name: "Subscription",
+                    link: "#",
+                    imgName: require("../assets/img/buy-comics-subscriptions.png"),
+                },
+                {
+                    name: "Comic shop locator",
+                    link: "#",
+                    imgName: require("../assets/img/buy-comics-shop-locator.png"),
+                },
+                {
+                    name: "DC Power visa",
+                    link: "#",
+                    imgName: require("../assets/img/buy-dc-power-visa.svg"),
+                },
+            ],
+        };
     }
+}
 
 </script>
 

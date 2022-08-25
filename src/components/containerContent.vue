@@ -1,31 +1,28 @@
 <template>
     <div class="comics-list-container">
+        <!-- Titolo Sezione -->
         <h2 class="comics-section-title brand-style">Current Series</h2>
+        <!-- Fumetti -->
         <ul class="comics-list">
-            <li v-for="(comics, index) in comicsList" :key="index" class="comics-card">
-                <a href="#">
-                    <img :src="comics.thumb" :alt="`Copertina ${comics.series}`">
-                    <span>{{comics.price}}</span>
-                </a>
-                <h3>{{comics.series}}</h3>
-            </li>
+            <singleComics v-for="(comics, index) in comicsList" :Series="comics.series" :Thumb="comics.thumb"
+                :Price="comics.price" :key="index" />
         </ul>
+        <!-- bottone carica altro -->
         <a class="button brand-style" href="#">Load More</a>
     </div>
 </template>
-
+.path
 <script>
+    import singleComics from './singleComics.vue';
 
     export default {
         name: 'containerContent',
-
+        components: {
+            singleComics,
+        },
         data() {
             return {
-                props: {
-                    data: 'array',
-                },
                 comicsList: [
-                    
                     {
                         thumb: "https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX",
                         price: "$19.99",
@@ -171,12 +168,15 @@
 
             .button {
                 padding: 15px 50px;
-                margin-top: 50px;
+                margin-top: 5rem;
+                margin-bottom: 1rem;
                 text-align: center;
 
                 &:hover {
                     border-radius: 10px;
                     transition: all 0.2s linear 0.1s;
+                    color: $brand_color;
+                    background-color:$light_color ;
                 }
             }
         }

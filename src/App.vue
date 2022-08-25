@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
   import appHeader from './components/appHeader.vue';
   import appMain from './components/appMain.vue';
   import appFooter from './components/appFooter.vue';
@@ -18,15 +19,13 @@
       appMain,
       appFooter
     },
-    // props: {
-    //   keyg: 'name',
-    // },
     data() {
       return {
         
       }
     }
   }
+
 </script>
 
 <style lang="scss"></style>

@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
     export default {
         name: 'appHeader',
         data() {
@@ -69,6 +70,7 @@
             }
         }
     }
+    
 </script>
 
 
