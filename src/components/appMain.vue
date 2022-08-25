@@ -100,6 +100,9 @@
                 padding: 7px 0;
                 display: inline-block;
             }
+            img {
+                padding: 4rem 0 ;
+            }
         }
     }
 
