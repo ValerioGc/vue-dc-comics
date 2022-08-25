@@ -99,7 +99,6 @@
             ul {
                 @include flex-center('vertical');
                 @include justify('space_between');
-                width: 60%;
             }
     
             .active {
@@ -108,8 +107,8 @@
             }
 
             .logo {
-                width: 6%;
-                margin: 25px 0;
+                width: 5%;
+                margin: 20px 0;
             }
         }
 

@@ -13,3 +13,11 @@ a {
     list-style-type: none;
     text-decoration: none;
 }
+
+.brand-style {
+    color: $light_color;
+    background-color: $brand_color;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+}

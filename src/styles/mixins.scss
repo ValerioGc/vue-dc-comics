@@ -1,5 +1,6 @@
-@mixin flex-center($type:'center') {
+@mixin flex-center($type:'center', $wrap:'yes') {
     display: flex;
+    
     @if $type == 'vertical' {
         align-items: center;
     } @else if $type == 'horizontal' {
@@ -7,6 +8,12 @@
     } @else if $type == 'both' {
         justify-content: center;
         align-items: center;
+    }
+
+    @if $wrap == 'yes' {
+        flex-wrap: wrap;
+    } @else if $wrap == 'no' {
+        flex-wrap: nowrap;
     }
 }
 

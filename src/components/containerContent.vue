@@ -1,31 +1,31 @@
 <template>
-    <main class="appMain">
-        <div class="container-content">
-            <div class="content">
-                <appJumbo />
-                <containerContent :data="comicsLink" />
-                <buyComics />
-            </div>
-        </div>
-    </main>
+    <div class="comics-list-container">
+        <h2 class="comics-section-title brand-style">Current Series</h2>
+        <ul class="comics-list">
+            <li v-for="(comics, index) in comicsList" :key="index" class="comics-card">
+                <a href="#">
+                    <img :src="comics.thumb" :alt="`Copertina ${comics.series}`">
+                    <span>{{comics.price}}</span>
+                </a>
+                <h3>{{comics.series}}</h3>
+            </li>
+        </ul>
+        <a class="button brand-style" href="#">Load More</a>
+    </div>
 </template>
 
 <script>
 
-import appJumbo from '@/components/appJumbo.vue';
-import containerContent from '@/components/containerContent.vue';
-import buyComics from '@/components/buyComics.vue';
-
     export default {
-        name: 'appMain',
-        components: {
-            appJumbo,
-            buyComics,
-            containerContent,
-        },
+        name: 'containerContent',
+
         data() {
             return {
+                props: {
+                    data: 'array',
+                },
                 comicsList: [
+                    
                     {
                         thumb: "https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX",
                         price: "$19.99",
@@ -98,37 +98,11 @@ import buyComics from '@/components/buyComics.vue';
                         series: "Catwoman",
                         type: "graphic novel"
                     }
-                ],
-                comicsLink: [
-                    {
-                        name: 'Digital Comics',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-digital-comics.png'),
-                    },
-                    {
-                        name: 'DC Merchandise',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-merchandise.png'),
-                    },
-                    {
-                        name: 'Subscription',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-subscriptions.png'),
-                    },
-                    {
-                        name: 'Comic shop locator',
-                        path: '#',
-                        imgName: require('../assets/img/buy-comics-shop-locator.png'),
-                    },
-                    {
-                        name: 'DC Power visa',
-                        path: '#',
-                        imgName: require('../assets/img/buy-dc-power-visa.svg'),
-                    },
-                ],
+                ]
             }
         }
     }
+
 </script>
 
 <style lang="scss">
@@ -137,11 +111,74 @@ import buyComics from '@/components/buyComics.vue';
     @import '../styles/general.scss';
     @import '../styles/mixins.scss';
 
-            .container-content {
-                background-color: $dark_color;
-    
-                .content {
-                    color: $light_color;
+
+        .comics-list-container {
+            width: 80%;
+            margin: auto;
+            padding: 25px 0;
+            text-align: center;
+
+            .comics-section-title {
+                padding: 15px 20px;
+                position: relative;
+                top: -55px;
+                right: 42%;
+            }
+
+            .comics-list {
+                @include flex-center('vertical', 'yes');
+                @include justify('space_between');
+            }
+
+            .comics-card {
+                width: calc(100% / 6 - 30px);
+                height: calc(100vh / 4);
+                margin: 40px 15px;
+
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                        
+                            img {
+                                object-fit: cover;
+                                object-position: top;
+                                width: 100%;
+                                height: 100%;
+                                
+                                &:hover {
+                                    filter: brightness(70%);
+                                }
+                                &:hover .comics-card a span {
+                                    display: inline-block;
+                                }
+                            }
+
+                            span {
+                                display: none;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                font-weight: bold;
+                                font-size: 20px;
+                                color: $light_color;
+                                text-shadow: 2px 2px 3px $dark_color;
+                            }
+                        }
+            }
+
+            .button {
+                padding: 15px 50px;
+                margin-top: 50px;
+                text-align: center;
+
+                &:hover {
+                    border-radius: 10px;
+                    transition: all 0.2s linear 0.1s;
                 }
             }
+        }
+
 </style>
