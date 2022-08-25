@@ -2,13 +2,18 @@
     <main class="appMain">
         <div class="container-content">
             <div class="content">
-                <h1>--> Content goes here &lt;--</h1>
+
+                <div class="jumbo">
+                    <!-- <img src="@/assets/img/jumbotron.jpg" alt="immagine jumbotron"> -->
+                </div>
+
+
+
             </div>
         </div>
         <div class="container-comics">
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
-                    <!-- <img :src="require(`../assets//img/${link.imgName}`)" :alt=" `Link ${link.name}`"> -->
                     <img :src="link.imgName" :alt=" `Link ${link.name}`" />
                     <h3>{{link.name}}</h3>
                 </li>
@@ -42,8 +47,6 @@
                         name: 'Comic shop locator',
                         path: '#',
                         imgName: require('../assets/img/buy-comics-shop-locator.png'),
-
-                        
                     },
                     {
                         name: 'DC Power visa',
@@ -58,6 +61,7 @@
 
 <style lang="scss">
 
+
     @import '../styles/vars.scss';
     @import '../styles/general.scss';
     @import '../styles/mixins.scss';
@@ -66,12 +70,14 @@
     
         .container-content {
             background-color: $dark_color;
-            padding: 70px 0;
+            height: 350px;
+            background-image: url('@/assets/img/jumbotron.jpg');
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
 
             .content {
                 color: $light_color;
-                width: 80%;
-                margin: auto;
             }
         }
 
@@ -100,6 +106,14 @@
             }
             img {
                 padding: 4rem 0 ;
+            }
+        }
+        .jumbo {
+            height: 30vh;
+
+            img {
+                width: 100%;
+                height: 100%;
             }
         }
     }

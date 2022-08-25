@@ -74,10 +74,6 @@
 
 <style lang="scss">
 
-
-
-
-
     @import '../styles/vars.scss';
     @import '../styles/general.scss';
     @import '../styles/mixins.scss';
@@ -92,7 +88,7 @@
             a {
                 color: $alt_dark_color;
                 border-bottom: 3px solid transparent;
-                padding: 3.3rem 0;
+                padding: 3.3rem 1rem;
 
                 &:hover {
                     color: $brand_color;

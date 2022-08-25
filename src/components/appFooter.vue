@@ -15,28 +15,17 @@
             <a href="#" class="button">SIGN-UP NOW!</a>
             <div>
                 <h2>FOLLOW US</h2>
-                <a href="#">
-                    <!-- <font-awesome-icon icon="fa-brands fa-facebook-f" /> -->
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-pinterest-p"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-solid fa-location-dot"></i>
-                </a>
+                <a v-for="(link, index) in socLink" :key="index" class="link" :href="link.link">
+                    <img :src="link.logo" :alt="`Logo ${link.name}`">
+                </a>       
             </div>
         </div>
     </footer>
 </template>
 
 <script>
+
+
 
 export default {
     name: 'appFooter',
@@ -167,6 +156,33 @@ export default {
                             }
                         ]
                 }
+            ],
+            socLink: [
+                {
+                    name: 'Facebook',
+                    logo: require('../assets/img/footer-facebook.png'),
+                    link: 'http://www.facebook.com',
+                },
+                {
+                    name: 'Twitter',
+                    logo: require('../assets/img/footer-twitter.png'),
+                    link: 'http://www.twitter.com',
+                },
+                {
+                    name: 'Youtube',
+                    logo: require('../assets/img/footer-youtube.png'),
+                    link: 'http://www.youtube.com',
+                },
+                {
+                    name: 'Pinterest',
+                    logo: require('../assets/img/footer-pinterest.png'),
+                    link: 'http://www.pinterest.com',
+                },
+                {
+                    name: 'Periscope',
+                    logo: require('../assets/img/footer-periscope.png'),
+                    link: 'http://www.periscope.com',
+                }
             ]
         }
     }
@@ -236,9 +252,8 @@ export default {
                 color: $brand_color;
             }
 
-            i {
-                border-radius: 50%;
-                background-color: $alt_light_color;
+            .link {
+                width: 80%;
             }
         }
     }
