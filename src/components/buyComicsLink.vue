@@ -5,7 +5,6 @@
             <h3>{{linkName}}</h3>
         </a>
     </li>
-
 </template>
 
 <script>
