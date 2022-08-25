@@ -146,23 +146,23 @@ export default {
                     linkName:
                         [
                             {
-                                name: 'DC',
+                                nameL: 'DC',
                                 path: '#',
                             },
                             {
-                                name: 'MAD Magazine',
+                                nameL: 'MAD Magazine',
                                 path: '#',
                             },
                             {
-                                name: 'DC Kids',
+                                nameL: 'DC Kids',
                                 path: '#',
                             },
                             {
-                                name: 'DC Universe',
+                                nameL: 'DC Universe',
                                 path: '#',
                             },
                             {
-                                name: 'DC Power Visa',
+                                nameL: 'DC Power Visa',
                                 path: '#',
                             }
                         ]

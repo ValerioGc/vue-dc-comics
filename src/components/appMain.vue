@@ -8,8 +8,8 @@
         <div class="container-comics">
             <ul>
                 <li v-for="(link, index) in comicsLink" :key="index">
-                    <!-- <img :src="require('@/assets/img/' + link.imgName + '.png')" :alt=" `Link ${link.name}`"> -->
-                    <img :src="'../assets/img/' + link.imgName + '.png'" :alt=" `Link ${link.name}`">
+                    <!-- <img :src="require(`../assets//img/${link.imgName}`)" :alt=" `Link ${link.name}`"> -->
+                    <img :src="link.imgName" :alt=" `Link ${link.name}`" />
                     <h3>{{link.name}}</h3>
                 </li>
             </ul>
@@ -26,27 +26,29 @@
                     {
                         name: 'Digital Comics',
                         path: '#',
-                        imgName: 'buy-comics-digital-comics',
+                        imgName: require('../assets/img/buy-comics-digital-comics.png'),
                     },
                     {
                         name: 'DC Merchandise',
                         path: '#',
-                        imgName: 'buy-comics-merchandise'
+                        imgName: require('../assets/img/buy-comics-merchandise.png'), 
                     },
                     {
                         name: 'Subscription',
                         path: '#',
-                        imgName: 'buy-comics-subscription'
+                        imgName: require('../assets/img/buy-comics-subscriptions.png'),
                     },
                     {
                         name: 'Comic shop locator',
                         path: '#',
-                        imgName: 'buy-comics-shop-locator'
+                        imgName: require('../assets/img/buy-comics-shop-locator.png'),
+
+                        
                     },
                     {
                         name: 'DC Power visa',
                         path: '#',
-                        imgName: 'buy-dc-power-visa'
+                        imgName: require('../assets/img/buy-dc-power-visa.svg'),
                     },
                 ]
             }
